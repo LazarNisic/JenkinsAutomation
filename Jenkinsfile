@@ -13,7 +13,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
                 echo 'Build stage done'
             }
         }
@@ -26,10 +26,10 @@ pipeline {
                     def artifactName = "${pom.artifactId}-${pom.version}.jar"
 
                     
-                    sh "mkdir -p /opt/build-artifacts"
+                    bat "mkdir C:\\opt\\build-artifacts"
 
                     
-                    sh "cp target/${artifactName} /opt/build-artifacts/"
+                    bat "copy target\\${artifactName} C:\\opt\\build-artifacts\\"
 
                     echo 'Deploy stage done'
                 }
