@@ -7,12 +7,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm
+                echo 'Checkout stage done'
             }
         }
 
         stage('Build') {
             steps {
                 sh 'mvn clean package'
+                echo 'Build stage done'
             }
         }
 
@@ -28,6 +30,8 @@ pipeline {
 
                     
                     sh "cp target/${artifactName} /opt/build-artifacts/"
+
+                    echo 'Deploy stage done'
                 }
             }
         }
