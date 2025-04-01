@@ -2,6 +2,6 @@ package com.example;
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println("Jenkins Job done!");
+        System.out.println("Jenkins Job done! Webhooh added");
     }
 }
